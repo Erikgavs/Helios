@@ -19,6 +19,11 @@ def enviar_mensaje():
     private_ip = subprocess.run("ip a | grep '/24'", text=True, shell=True, capture_output=True)
     private_ip_output = private_ip.stdout
 
+    public_ip = subprocess.run(["curl", "ifconfig.me"], text=True, capture_output=True)
+    public_ip_output = public_ip.
+
+    # Meterle ps aux
+
     # SYS INFO
     porcentaje_mem = psutil.cpu_percent(interval=1)
     memoria = psutil.virtual_memory()
@@ -38,8 +43,11 @@ def enviar_mensaje():
     Información de contenedores Docker
     Contenedores: {docker_info_output}
 
-    Ip privada
+    IP privada
     ip: {private_ip_output}
+
+    IP pública
+    ip: {public_ip_output}
 
     """
 

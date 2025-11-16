@@ -20,7 +20,10 @@ def enviar_mensaje():
     private_ip_output = private_ip.stdout
 
     public_ip = subprocess.run(["curl", "ifconfig.me"], text=True, capture_output=True)
-    public_ip_output = public_ip.
+    public_ip_output = public_ip.stdout
+
+    ping_server = subprocess.run(["ping", "-c", "1", "192.168.5.200"], text=True, capture_output=True)
+    ping_server_output = ping_server.stdout
 
     # Meterle ps aux
 
@@ -39,6 +42,9 @@ def enviar_mensaje():
     Uso de CPU: {porcentaje_mem:.2f}%
     Memoria: {memoria_usada:.2f} Mb
     Uso del Disco: {disco_usado:.2f} Mb
+
+    Ping al server
+    {ping_server_output}
 
     Información de contenedores Docker
     Contenedores: {docker_info_output}

@@ -1,32 +1,43 @@
-# ☀️Helios
+# ✨Elendil
 
-Helios es un bot diseñado para dar información acerca de los recursos de los servidores del usuario, los transmite por correo eléctronico.
-## ⚙️Requerimientos
-Requerimientos necesarios para poder utilizar **Helios**
+Elendil is a bot designed to send information about the resources of the user server to him, the script uses te smtp library to send emails.
+
+The script is configured to send you a email at 10 and at 19 o'clock, this allows you to know the status of your server and follow-up the state.
+
+Also the script can easly adapt to new features.
+
+
+## ⚙️Features
+- N8n compatibility
+- Execute local commands
+- Psutil library 
+- Public IP info
+
+
 ## 🤖n8n (opcional)
-Se puede usar este script con n8n haciendo peticiones a su endpoint **/helios**
+We can use this script with n8n making petitions to **/helios** endpoint. 
 ## 🔐.env
-Para poder hacer este script funcional tendremos que crear un arhcivo .env (junto con la líbreria python-dotenv)
+To make this script functional we need to have a .env file.
 
-En el .env tendremos que poner 3 párametros, uno para el que **envía** el correo, otro para quién lo **recibe**. Él último párametro será la **contraseña de app** que nos dará google
+in the .env file we have to put **3 parameters**, one for the person that sends the email, other parameter for the one who recive the email and the last parameter for the password of google app.
 
-## 🏠Instancia en Flask
+## 🏠Flask instalation
 
-## 🛖Entorno
-Antes de comenzar vamos a tener que crear un entorno en python
+## 🛖Enviorenment
+
+Before we start we need to create a environment in python.
 
 ```
 python3 -m venv nombre-entorno
 source nombre-entorno/bin/activate
 ```
-
-Ahora vamos a instalar las dependencias (dentro del entorno)
+Now we need to install the dependences (in our environment).
 ```
 pip install -r requirements.txt
 ```
 
-## ⚔️Ejecucción
-Para iniciar este script hay que ejecutarlo con python, tendremos 2 archivos, **main.py** y **reporter.py**, tendremos que ejecutar el archivo **main.py**
+## ⚔️Execution
+To start this script que need to execute main.py with the next command.
 
 ```
 nohup python3 main.py &
@@ -34,4 +45,3 @@ nohup python3 main.py &
 ## 🧙‍♂️Authors
 
 - [@Erikgavs](https://www.github.com/Erikgavs)
-

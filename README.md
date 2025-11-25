@@ -1,5 +1,5 @@
 # ✨Elendil
-> The star that will guide your server
+> The one who loves the stars
 
 Elendil is a bot designed to send information about the resources of the user server to him, the script uses te smtp library to send emails.
 

@@ -22,7 +22,6 @@
 - [n8n Integration](#n8n-integration)
 - [Troubleshooting](#troubleshooting)
 - [Security](#security)
-- [Contributing](#contributing)
 - [Author](#author)
 
 ---
@@ -460,31 +459,6 @@ Edit `reporter.py` line 75:
 
 ```python
 mensaje["Subject"] = "Your Custom Subject Here"
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests (if available)
-pytest
-
-# Check code style
-flake8 .
 ```
 
 ---

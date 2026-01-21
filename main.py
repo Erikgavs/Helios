@@ -1,9 +1,9 @@
 from flask import Flask
-from reporter import enviar_mensaje # Importamos la función reporter del archivo reporter
+from reporter import enviar_mensaje # Import the reporter function from the reporter file
 
 app = Flask(__name__)
 
-@app.route("/helios", methods=["GET"]) # Endpoint /helios
+@app.route("/helios", methods=["GET"]) # /helios endpoint
 def mensaje():
     resultado = enviar_mensaje()
     return {"status": "ok", "resultado": resultado}, 200

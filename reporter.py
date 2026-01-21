@@ -13,7 +13,7 @@ def enviar_mensaje():
     password = os.getenv("PASSWORD")
 
     # PROCESS REGISTER
-    docker_info = subprocess.run(["docker", "ps"], text=True, capture_output=True) # Info de docker
+    docker_info = subprocess.run(["docker", "ps"], text=True, capture_output=True) # Docker info
     docker_info_output = docker_info.stdout
 
     private_ip = subprocess.run("ip a | grep '/24'", text=True, shell=True, capture_output=True)
@@ -25,25 +25,25 @@ def enviar_mensaje():
     ping_server = subprocess.run(["ping", "-c", "1", "192.168.5.200"], text=True, capture_output=True)
     ping_server_output = ping_server.stdout
 
-    # Meterle ps aux
+    # TODO: Add ps aux
 
     # SYS INFO (psutil)
     porcentaje_mem = psutil.cpu_percent(interval=1)
     memoria = psutil.virtual_memory()
-    memoria_usada = memoria.used / 1024**2 # Conversión de Bytes a MB
+    memoria_usada = memoria.used / 1024**2 # Convert Bytes to MB
     disco = psutil.disk_usage("/")
-    disco_usado = disco.used / 1024**2 # Conversión de Bytes a MB
+    disco_usado = disco.used / 1024**2 # Convert Bytes to MB
     temperatura = psutil.sensors_temperatures()
     if temperatura:
-        primer_sensor = list(temperatura.values())[0][0] # La lista de sensores se convierte en un array y seleccionamos el primer valor dela array
-        # se van a hacer arrays por sensor y dentro de los sensores hay elementos, seleccionamos el primer elemento del primer sensor
+        primer_sensor = list(temperatura.values())[0][0] # Convert sensor list to array and select first value
+        # Arrays are created per sensor, we select the first element of the first sensor
         temperatura_actual = primer_sensor.current
         temperatura_max = primer_sensor.hight
         temperatura_crit = primer_sensor.critical
     else:
         temperatura_actual = temperatura_max = temperatura_crit = None
 
-    # :.2f => Aceptamos 2 decimales
+    # :.2f => Accept 2 decimal places
     info =f"""
     Reporte diario de Prometeus
 
